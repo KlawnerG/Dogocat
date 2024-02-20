@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/for.css">
+    <title>Registro de Usuario</title>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Registro </h1>
+        
+        
+        <form action="../../../Controlador/Control.php" method="POST">
+            <option>Documento: </option>
+            <input type="text" id="Documento" name="Documento"><br><br>
+
+                <label>Nombres:</label>
+                <input type="text" id="Nombres" name="Nombres">
+
+                <label>Apellidos:</label>
+                <input type="text" id="Apellidos" name="Apellidos">
+
+                <option>Ciudad :  </option>
+                <select name="Ciudad">
+                    <Option value="Bogota D.C.">Bogota D.C.</Option>
+                </select> <Br></Br>
+
+                <option>Direccion:  </option>
+                <input type="text" id="Direc" name="Direc"><br><br>
+
+                <option>Correo : </option>
+                <input type="text" id="Correo" name="Correo"><br><br>
+
+                <option>Telefono : </option>
+                <input type="text" id="Telefono" name="Telefono"><br><br>
+                <option>Rol : </option>
+                <select name="Rol">
+                    <option value="1">Usuario</option>
+                    <option value="2">Administrador</option>
+                    <option value="3">Veterinario</option>
+                </select> <br><br>
+
+                <option>Contraseña : </option>
+                <input type="text" id="Contra" name="Contra"><br><br>
+                <br><br>
+                <input type="submit" value="Registrar">
+
+                <button> <a href="../Inicio/inicio.html"></a> Volver</button>
+            </form>
+        </form>
+    </div>
+</body>
+</html>

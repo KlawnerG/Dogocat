@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones</title>
+</head>
+    <body>
+        <center> <h1> Donacion </h1> 
+            <form action="../../../Controlador/ControlDon.php" method="POST">
+                <label>Documento: </label>
+                <input type="text" id="Documento" name="Documento"><br><br>
+                    
+                <select name="Tipo" id="Tipo" onchange="Opciones(); Desactivar();" required>
+                    <option disabled selected>Seleccione Tipo De la Donacion</option>
+                    <option value="Insumos">Insumos</option>
+                    <option value="Dinero">Dinero</option>
+                </select><br><br>
+                
+                <div id="Dinero" style="display: none;">
+                    <select name="Dinero" id="Dinero">
+                        <option disabled selected> Seleccione el metodo de pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Transferencia">Transferencia</option>
+                        <option value="Cheque">Cheque</option>
+                    </select>
+                </div><br>
+
+                <div id="Insumos" style="display: none;">
+                    <select name="Insumos" id="Insumos">
+                        <option disabled selected> Seleccione el insumo de su preferencia</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Camas">Camas</option>
+                        <option value="P.Aseo">P.Aseo</option>
+                    </select>
+                </div><br>
+              
+                <div id="Descripcion" style="display: none;"> 
+                    <label for="Documento">Descripcion: </label>
+                    <input type="text" id="Descripcion" name="Descripcion"><br><br>
+                </div>
+
+                <div id="Valor" style="display: none;">    
+                    <label for="Documento">Valor :  </label>
+                    <input type="text" id="Valor" name="Valor"><br><br>
+                </div>   
+
+                <option>Lugar</option>
+                <select name="Lugar" id="Lugar">
+                    <Option value="Bogota D.C.">Bogota D.C.</Option>
+                </select> <br><br>
+
+                <label>Fecha:</label>
+                <input type="date" id="Fecha" name="Fecha"><br><br>
+    
+                <input type="submit" value="Realiazar Donacion"></button> <br><br>
+                <Button> Volver </Button>
+
+                <script>
+
+                    function Opciones() {
+                        let opciones = document.getElementById("Tipo").value;
+                        let opcionesDinero = document.getElementById("Dinero");
+                        let opcionesInsumos = document.getElementById("Insumos");
+
+                        if (opciones === "Dinero") {
+                            opcionesDinero.style.display = "block";
+                            opcionesInsumos.style.display = "none";
+                        } else if (opciones === "Insumos") {
+                            opcionesInsumos.style.display = "block";
+                            opcionesDinero.style.display = "none";
+                        }else {
+                            opcionesInsumos.style.display = "none";
+                            opcionesDinero.style.display = "none";
+                        }
+                    }
+
+                    function Desactivar() {
+                        let opciones = document.getElementById("Tipo").value;
+                        let descripcion = document.getElementById("Descripcion");
+                        let valor= document.getElementById("Valor");
+
+                        if (opciones === "Dinero") {
+                            document.getElementById("Dinero").style.display="block";
+                            document.getElementById("Insumos").style.display="none";
+                            descripcion.style.display = "none";
+                            valor.style.display = "block";
+                        }else if (opciones === "Insumos") {
+                            document.getElementById("Dinero").style.display="none";
+                            document.getElementById("Insumos").style.display="block";
+                            descripcion.style.display = "block";
+                            valor.style.display = "none";
+                        }else{
+                            document.getElementById("Dinero").style.display="none";
+                            document.getElementById("Insumos").style.display="none";
+                            descripcion.style.display = "none";
+                            valor.style.display = "none";
+                        }
+
+                    }
+                    
+                </script>
+            </form>
+        </center>
+    </body>
+</html>

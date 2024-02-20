@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/for.css">
+    <title>Registro de Mascotas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Mascotas</h1>
+        <div id="registro-mascotas-form">
+            <form action="../../../Controlador/ControlMasc.php" method="POST" enctype="multipart/form-data">
+
+                <label>Tipo de Animal:</label>
+                <select name="Tipo" id="Tipo">
+                    <option disabled selected>Seleccione Tipo De Animal</option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                </select>
+
+                <label>Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre">
+
+                <label>Edad:</label>
+                <input type="text" id="Edad" name="Edad">
+
+                <label>Raza:</label>
+                <input type="text" id="Raza" name="Raza">
+
+                <label>Tamaño:</label>
+                <input type="text" id="Tamaño" name="Tamaño">
+
+                <label>Color:</label>
+                <input type="text" id="Color" name="Color">
+
+                <label>Sexo:</label>
+                <select id="Sexo" name="Sexo">
+                    <option disabled selected>Seleccione El Sexo del animal</option>
+                    <option value="macho">Macho</option>
+                    <option value="hembra">Hembra</option>
+                </select>
+                <label>Foto:</label>
+                <center>
+                    <input type="file" id="Foto" name="Foto">
+                </center>
+                <input type="submit" value="Registrar"></button>
+                <button> <a href="/ProyectoPHP/Vista/Html/Inicio/Administrador.html"></a> Volver</button>
+            </form>
+        </div>
+    </div>
+
+   
+</body>
+</html>
